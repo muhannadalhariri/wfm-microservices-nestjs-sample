@@ -15,8 +15,14 @@ export class AppController {
   }
 
   @Get('/perform-action')
-  async publishEvent(action) {
-    console.log(action);
-    return this.appService.performRequestAction( action);
+  async publishEvent(action: string) {
+    console.info(action);
+    return this.appService.performRequestAction(action);
+  }
+
+  @Get('/perform-charity-action')
+  async publishCharityEvent(action: string) {
+    console.info(action);
+    return this.appService.performCharityRequestAction(action);
   }
 }

@@ -11,7 +11,7 @@ import { AppService } from './app.service';
         transport: Transport.RMQ,
         options: {
           urls: ['amqp://guest:guest@localhost:55002/'],
-          queue: 'limit_management',
+          queue: 'workflow_management',
         },
       },
     ]),
