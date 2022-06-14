@@ -14,3 +14,18 @@ Before running the project we need to run RabbitMQ **Best way to use a docker co
 
 ## What is sse sample:
 This sample represents the client to handle a specific type of event from the 
+
+After running all projects the following happens
+* limit-handler and charity-handler is now listenting to RMQ queue = workflow_management
+* event-steam-client: is now ready to emit events into the event stream (RMQ)
+
+Now from your browser call **http://localhost:3000/perform-action?action=reject** This will send event (rejection event) to the queue and because the name is **wfm-limit-event** this will be handled be limit handler
+
+If you call http://localhost:3000/perform-charity-action?action=reject This will send event (rejection event) to the queue and because the name is **wfm-charity-event** this will be handled be charity handler
+
+
+
+## How can we use these samples:
+The  handlers can be used in containers along with other APIs (the container will contain two apps running on different ports) 
+* The handler ports are not exposing any portsm they are only consumers.
+
