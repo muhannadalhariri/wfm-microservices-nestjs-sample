@@ -7,10 +7,11 @@ Before running the project we need to run RabbitMQ **Best way to use a docker co
 
 ## Starting the samples:
 * First we have to configure RMQ in both projects 
-* In event-stream-client:
-*     Edit app.module.ts and change the URLs to the URL of RMQ 
-*     Edit main.ts and change the URLs to URL of RMQ
-*     We can also change the queue name
+* In workflow-manager:
+**     Edit app.module.ts and change the URLs to the URL of RMQ 
+* In Charity and Limit Handlers
+**     Edit main.ts and change the URLs to URL of RMQ
+* We can also change the queue name if necessery 
 
 ## What is sse sample:
 This sample represents the client to handle a specific type of event from the 
